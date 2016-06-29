@@ -74,9 +74,6 @@ public class DisableRestExtension implements TestExecutionCondition {
         if (method.isAnnotationPresent(DisableRest.class)) {
           if (method.isAnnotationPresent(Test.class)) {
             disabledRestPresent = true;
-          } else {
-            throw new PreconditionViolationException(
-                "@DisableRest may only be placed on methods that are also annotated with @Test.");
           }
         }
       }
