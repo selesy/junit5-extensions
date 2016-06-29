@@ -43,8 +43,8 @@ public class DisableRestExtension implements TestExecutionCondition {
       Store store = parent.getStore(namespace);
 
       boolean disabledRestPresent = (Boolean) store.getOrComputeIfAbsent("DISABLED_REST_FLAG",
-          (key) -> hasDisabledRest(context.getTestClass()));
-      log.debug("Has @DisabledRest in class: {}", disabledRestPresent);
+          (key) -> hasDisableRest(context.getTestClass()));
+      log.debug("Has @DisableRest in class: {}", disabledRestPresent);
 
       if (disabledRestPresent) {
         Optional<Method> optionalTestMethod = context.getTestMethod();
@@ -56,7 +56,7 @@ public class DisableRestExtension implements TestExecutionCondition {
         }
       }
 
-      log.debug("Has @DisabledRest on method: {}", disabledRestPresent && !result.isDisabled());
+      log.debug("Has @DisableRest on method: {}", disabledRestPresent && !result.isDisabled());
     }
 
     log.debug("@Test will run: {}", !result.isDisabled());
@@ -64,8 +64,8 @@ public class DisableRestExtension implements TestExecutionCondition {
     return result;
   }
 
-  boolean hasDisabledRest(Optional<Class<?>> optionalTestClass) {
-    log.trace("hasDisabledRest()");
+  boolean hasDisableRest(Optional<Class<?>> optionalTestClass) {
+    log.trace("hasDisableRest()");
     boolean disabledRestPresent = false;
 
     if (optionalTestClass.isPresent()) {
