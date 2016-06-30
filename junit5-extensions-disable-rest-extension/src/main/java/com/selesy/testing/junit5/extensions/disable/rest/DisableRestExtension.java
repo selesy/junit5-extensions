@@ -13,7 +13,6 @@ import org.junit.jupiter.api.extension.ExtensionContext.Namespace;
 import org.junit.jupiter.api.extension.ExtensionContext.Store;
 import org.junit.jupiter.api.extension.TestExecutionCondition;
 import org.junit.jupiter.api.extension.TestExtensionContext;
-import org.junit.platform.commons.util.PreconditionViolationException;
 
 import lombok.extern.slf4j.Slf4j;
 
