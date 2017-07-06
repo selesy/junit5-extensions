@@ -18,7 +18,7 @@ import com.selesy.testing.junit5.extensions.disable.rest.predicates.ConditionEva
 @ExtendWith(DisabledIfExtension.class)
 public @interface DisabledIf {
 
-  Class<? extends ConditionEvaluationPredicate> value();
+  Class<? extends ConditionEvaluationPredicate> predicate();
   String[] arguments() default {};
 
 }

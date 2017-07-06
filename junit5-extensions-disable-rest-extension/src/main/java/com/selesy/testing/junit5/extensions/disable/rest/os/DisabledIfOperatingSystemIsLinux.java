@@ -15,7 +15,7 @@ import com.selesy.testing.junit5.extensions.disable.rest.DisabledIfExtension;
 @Retention(RUNTIME)
 @Target({ METHOD, TYPE })
 @ExtendWith(DisabledIfExtension.class)
-@DisabledIf(value = OperatingSystemIs.class, arguments = "Linux")
+@DisabledIf(predicate = OperatingSystemIs.class, arguments = "Linux")
 public @interface DisabledIfOperatingSystemIsLinux {
 
 }

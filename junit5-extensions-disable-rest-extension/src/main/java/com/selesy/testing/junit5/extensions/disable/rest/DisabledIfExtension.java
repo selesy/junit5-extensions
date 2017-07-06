@@ -34,7 +34,7 @@ public class DisabledIfExtension implements ExecutionCondition {
 
   ConditionEvaluationResult evaluate(DisabledIf annotation) {
     try {
-      ConditionEvaluationPredicate predicate = annotation.value().newInstance();
+      ConditionEvaluationPredicate predicate = annotation.predicate().newInstance();
       if (predicate.test(annotation.arguments())) {
         return ConditionEvaluationResult.disabled(predicate.reason(annotation.arguments()));
       }
